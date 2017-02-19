@@ -81,4 +81,5 @@ Walking pig sprite taken from <a href="http://www.glitchthegame.com">glitchthega
 
 Interesting bit of Trivia: [Tiny Speck](https://tinyspeck.com/), the company behind the now-defunct Glitch game is now actually [Slack](https://slack.com)!
 
-#### License
+### License
+Apache 2
