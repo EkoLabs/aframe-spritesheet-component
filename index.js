@@ -1,6 +1,7 @@
 
 /**
- * A-Frame Spritesheet Component component for A-Frame.
+ * A-Frame Spritesheet Component for A-Frame.
+ * Enables dynamic control of animation spritesheets
  */
 let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
     schema: {
@@ -73,8 +74,8 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
         // no actual animation
         if (!this.framesData && this.data.firstFrame == this.data.lastFrame) return;
 
-        // if no last frame is specified use the number of availble frames
-        let lastFrame = this.data.lastFrame?this.data.lastFrame:this.numFrames-1;
+        // if no last frame is specified use the number of available frames
+        let lastFrame = this.data.lastFrame ? this.data.lastFrame : this.numFrames - 1;
 
         this.currentFrame = Math.round(this.data.progress * (lastFrame - this.data.firstFrame)) + this.data.firstFrame;
         this.adjustTexture(this.currentFrame);

@@ -2,8 +2,8 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        "aframe-spritesheet-component": './index.js',
-        "aframe-spritesheet-component.min": './index.js',
+        'aframe-spritesheet-component': './index.js',
+        'aframe-spritesheet-component.min': './index.js',
     },
     output: {
         path: './dist',

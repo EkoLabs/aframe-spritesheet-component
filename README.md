@@ -4,15 +4,15 @@
 
 Animated spritesheet support for [A-Frame](https://aframe.io).
 
-### Using spritesheets
+### Demo / Using spritesheets
 
 Spritesheets are a common way to play pre-rendered animation. This component allows you to load up a spritesheet image to an `a-image` element and easily control its animation. It allows usage of two types of spritesheet formats:
 
-**Rows and Cols**
+**[Rows and Cols](http://ekolabs.github.com/aframe-spritesheet-component/examples/rowscol)**
 
 A grid representing all frames of the animation. All of the frames must be of the same dimensions, and the animation index is assumed to be scanned left to right, top to bottom. If your last frame is not the one on the bottom right, you'll have to specify the index of the last frame using the `lastFrame` property.
 
-**JSON data format**
+**[JSON data format](http://ekolabs.github.com/aframe-spritesheet-component/examples/json)**
 
 The spritesheet image file can be made more compact by using a dictionary automatically generated with  [TexturePacker](https://www.codeandweb.com/texturepacker). This will help reduce file size.
 
@@ -70,8 +70,8 @@ require('aframe-spritesheet-component');
 | progress | A value between 0 and 1 that represents animation progression. the index of the animation frame is calculated from this attribute| 0 |
 | cols | number of cols in the spritesheet image (not needed if using dataUrl)| 1 |
 | rows | number of rows spritesheet image (not needed if using dataUrl) | 1 |
-| firstFrame| index of the first frame of the animation, ordered left to right starting at the first row | 1 |
-| lastFrame| index of the last frame of the animation, ordered left to right starting at the first row | 1 |
+| firstFrame| index of the first frame of the animation, ordered left to right starting at the first row | 0 |
+| lastFrame| index of the last frame of the animation, ordered left to right starting at the first row . If not specified and not using the JSON format, value is `rows * cols - 1`| null |
 | cloneTexture | if using separate instances of the same image, set this to true | false |
 | dataUrl | If using a JSON format, url pointing to the json file| null |
 
