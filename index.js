@@ -49,9 +49,8 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
                     this.el.object3D.children[0].material.map = this.el.object3D.children[0].material.map.clone();
                     this.el.object3D.children[0].material.map.needsUpdate = true;
                 }
+
                 this.texture = this.el.object3D.children[0].material.map;
-
-
                 this.texture.wrapS = this.texture.wrapT = THREE.RepeatWrapping;
 
                 // set size of one sprite
@@ -126,9 +125,7 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
         } else{
             console.warn('Can\'t load spritesheet URL. No a-assets element present on the A-Scene!');
         }
-
     },
-
 
     /**
      * Adjust the texture to a specific frame index
@@ -211,7 +208,6 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
         this.texture.needsUpdate = true;
     }
 });
-
 
 /**
  * Returns the next highest number which is a power of 2
