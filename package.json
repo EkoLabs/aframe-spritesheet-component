@@ -1,7 +1,7 @@
 {
   "name": "aframe-spritesheet-component",
   "version": "1.0.0",
-  "description": "Provides animated spritesheet support for A-Frame",
+  "description": "Animated spritesheet support for A-Frame",
   "main": "index.js",
   "cdn": "dist/aframe-spritesheet-component.min.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ekolabs/aframe-spritesheet-component.git"
+    "url": "git+https://github.com/EkoLabs/aframe-spritesheet-component.git"
   },
   "keywords": [
     "aframe",

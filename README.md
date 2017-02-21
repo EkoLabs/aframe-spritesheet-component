@@ -1,4 +1,4 @@
-## aframe-spritesheet-component
+## A-Frame Spritesheet Component
 
 <img src="aframe_spritesheet.gif">
 
@@ -8,11 +8,11 @@ Animated spritesheet support for [A-Frame](https://aframe.io).
 
 Spritesheets are a common way to play pre-rendered animation. This component allows you to load up a spritesheet image to an `a-image` element and easily control its animation. It allows usage of two types of spritesheet formats:
 
-**[Rows and Cols](http://ekolabs.github.com/aframe-spritesheet-component/examples/rowscol)**
+**[Rows and Cols](https://ekolabs.github.io/aframe-spritesheet-component/examples/rowscols/)**
 
 A grid representing all frames of the animation. All of the frames must be of the same dimensions, and the animation index is assumed to be scanned left to right, top to bottom. If your last frame is not the one on the bottom right, you'll have to specify the index of the last frame using the `lastFrame` property.
 
-**[JSON data format](http://ekolabs.github.com/aframe-spritesheet-component/examples/json)**
+**[JSON data format](https://ekolabs.github.io/aframe-spritesheet-component/examples/json/)**
 
 The spritesheet image file can be made more compact by using a dictionary automatically generated with  [TexturePacker](https://www.codeandweb.com/texturepacker). This will help reduce file size.
 
@@ -80,6 +80,9 @@ require('aframe-spritesheet-component');
 Walking pig sprite taken from <a href="http://www.glitchthegame.com">glitchthegame.com</a>, under a Public Domain Dedication license.
 
 Interesting bit of Trivia: [Tiny Speck](https://tinyspeck.com/), the company behind the now-defunct Glitch game is now actually [Slack](https://slack.com)!
+
+### Author
+Developed by [Opher Vishnia](http://twitter.com/opherv) of [Eko](http://www.helloeko.com)
 
 ### License
 Apache 2
