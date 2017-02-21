@@ -1,5 +1,5 @@
 {
-  "name": "aframe-spritesheet-component",
+  "name": "@ekolabs/aframe-spritesheet-component",
   "version": "1.0.0",
   "description": "Animated spritesheet support for A-Frame",
   "main": "index.js",
