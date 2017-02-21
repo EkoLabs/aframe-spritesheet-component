@@ -1,6 +1,6 @@
 ## A-Frame Spritesheet Component
 
-<img src="aframe_spritesheet.gif">
+<img src="https://ekolabs.github.io/aframe-spritesheet-component/aframe_spritesheet.gif">
 
 Animated spritesheet support for [A-Frame](https://aframe.io).
 
