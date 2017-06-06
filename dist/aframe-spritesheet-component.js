@@ -74,7 +74,8 @@
 
 
 /**
- * A-Frame Spritesheet Component component for A-Frame.
+ * A-Frame Spritesheet Component for A-Frame.
+ * Enables dynamic control of animation spritesheets
  */
 var SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
     schema: {
@@ -92,6 +93,8 @@ var SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
      */
     init: function init() {
         var _this = this;
+
+        console.log('init');
 
         // if specified load spritesheet json data
         if (this.data.dataUrl) {
@@ -121,8 +124,8 @@ var SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
                     _this.el.object3D.children[0].material.map = _this.el.object3D.children[0].material.map.clone();
                     _this.el.object3D.children[0].material.map.needsUpdate = true;
                 }
-                _this.texture = _this.el.object3D.children[0].material.map;
 
+                _this.texture = _this.el.object3D.children[0].material.map;
                 _this.texture.wrapS = _this.texture.wrapT = THREE.RepeatWrapping;
 
                 // set size of one sprite
@@ -141,7 +144,7 @@ var SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
         // no actual animation
         if (!this.framesData && this.data.firstFrame == this.data.lastFrame) return;
 
-        // if no last frame is specified use the number of availble frames
+        // if no last frame is specified use the number of available frames
         var lastFrame = this.data.lastFrame ? this.data.lastFrame : this.numFrames - 1;
 
         this.currentFrame = Math.round(this.data.progress * (lastFrame - this.data.firstFrame)) + this.data.firstFrame;
@@ -199,6 +202,7 @@ var SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
      * @param {number} frameNum
      */
     adjustTexture: function adjustTexture(frameNum) {
+        console.log(frameNum);
         // image hasn't loaded, can't draw anything
         if (!this.imageLoaded) return;
 

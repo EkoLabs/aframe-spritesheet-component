@@ -67,7 +67,9 @@ require('aframe-spritesheet-component');
 
 | Property | Description | Default Value |
 | -------- | ----------- | ------------- |
-| progress | A value between 0 and 1 that represents animation progression. the index of the animation frame is calculated from this attribute| 0 |
+| progress | A value between 0 and 1 that represents animation progression. the index of the animation frame is calculated from this attribute. Used if no frameIndex or frameName specified | 0 |
+| frameIndex | Explicit index of the animation frame to use. Used if no frameName specified | null |
+| frameName | Explicit name of the animation frame to use, if using dataUrl | null |
 | cols | number of cols in the spritesheet image (not needed if using dataUrl)| 1 |
 | rows | number of rows spritesheet image (not needed if using dataUrl) | 1 |
 | firstFrame| index of the first frame of the animation, ordered left to right starting at the first row | 0 |

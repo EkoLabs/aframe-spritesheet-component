@@ -6,6 +6,8 @@
 let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
     schema: {
         progress: { type: 'number', default: 0 },
+        frameIndex: { type: 'number', default: null },
+        frameName: { type: 'string', default: null },
         cols: { type: 'number', default: 1 },
         rows: { type: 'number', default: 1 },
         firstFrame: { type: 'number', default: 0 },
@@ -76,7 +78,19 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
         // if no last frame is specified use the number of available frames
         let lastFrame = this.data.lastFrame ? this.data.lastFrame : this.numFrames - 1;
 
-        this.currentFrame = Math.round(this.data.progress * (lastFrame - this.data.firstFrame)) + this.data.firstFrame;
+        // decide current frame by this order: frame index (if specified), frame name (if specified), progress
+        if (this.data.frameIndex){
+            this.currentFrame = this.data.frameIndex;
+        } else if (this.data.frameName && this.frameNameToIndex) {
+            let frameIndex = this.frameNameToIndex[this.data.frameName];
+            if (frameIndex != null)
+                this.currentFrame = frameIndex;
+            else
+                console.warn(`Spritesheet error - No such frame with name ${this.data.frameName}`);
+        } else {
+            this.currentFrame = Math.round(this.data.progress * (lastFrame - this.data.firstFrame)) + this.data.firstFrame;
+        }
+
         this.adjustTexture(this.currentFrame);
     },
 
@@ -105,6 +119,12 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
                 this.spriteSheetData = JSON.parse(data);
                 this.framesData = Object.keys(this.spriteSheetData.frames).map(key => {
                     return this.spriteSheetData.frames[key];
+                });
+
+                // create a dictionary to map from keyframe names to frame number
+                this.frameNameToIndex = {};
+                Object.keys(this.spriteSheetData.frames).map((key, index) => {
+                    this.frameNameToIndex[key] = index;
                 });
                 this.numFrames = this.framesData.length;
 
