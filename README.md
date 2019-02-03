@@ -53,7 +53,7 @@ angle install aframe-spritesheet-component
 Install via npm:
 
 ```bash
-npm install aframe-spritesheet-component
+npm install @ekolabs/aframe-spritesheet-component
 ```
 
 Then require and use.
