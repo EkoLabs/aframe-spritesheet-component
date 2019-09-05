@@ -115,8 +115,9 @@ let SpriteSheet = AFRAME.registerComponent('sprite-sheet', {
     getSpriteSheetData: function(url) {
         let assetsEl = document.querySelector('a-assets');
         if (assetsEl) {
+            assetsEl.fileLoader.setResponseType('json');
             assetsEl.fileLoader.load(url, data => {
-                this.spriteSheetData = JSON.parse(data);
+                this.spriteSheetData = data;
                 this.framesData = Object.keys(this.spriteSheetData.frames).map(key => {
                     return this.spriteSheetData.frames[key];
                 });
