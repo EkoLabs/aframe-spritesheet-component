@@ -1,3 +1,5 @@
+# This repo is no longer actively maintained #
+
 ## A-Frame Spritesheet Component
 
 <img src="https://ekolabs.github.io/aframe-spritesheet-component/aframe_spritesheet.gif">
